@@ -5,10 +5,12 @@
 #include<glm/vec3.hpp>
 #include<math.h>
 #include<iostream>
+#include<algorithm>
 
 //7 4 2024
-GLfloat verticies[2000];
-GLuint indicies[2000];
+
+GLfloat verticies[5005];
+GLuint indicies[2002];
 
 void DrawStar(int pointCount, float radius, int skipNumber)
 {
@@ -36,10 +38,10 @@ int main()
 {
 	while (1)
 	{
-
+		std::fill(verticies, verticies + 5005, 0);
+		std::fill(indicies, indicies + 2002, 0);
 
 		int a, b;
-
 		std::cout << "Please enter the desired number of points on a circle(max. 1000): \n";
 		std::cin >> a;
 		std::cout << "Please enter the number of lines to be drawn between the points you selected earlier \n(Do not choose a number that exactly divides the selected points and bigger than half of the selected points; otherwise, you will not obtain a star): \n";
