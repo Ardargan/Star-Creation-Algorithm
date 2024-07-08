@@ -6,7 +6,6 @@
 #include<math.h>
 #include<iostream>
 #include<algorithm>
-
 //7 4 2024
 
 GLfloat verticies[5005];
@@ -14,20 +13,20 @@ GLuint indicies[2002];
 
 void DrawStar(int pointCount, float radius, int skipNumber)
 {
-	verticies[0] = 1.0f * radius;
-	verticies[1] = 0;
-	verticies[2] = 0.3 + sin(0) * radius;
-	verticies[3] = 0.3 + cos(0) * radius;
-	verticies[4] = 0.3 + tan(0) * radius;
+	verticies[0] = cos((360.0f / pointCount * 3.141592f / 180.0f * 0) + (90 * 3.141592f / 180.0f)) * radius;
+	verticies[1] = sin((360.0f / pointCount * 3.141592f / 180.0f * 0) + (90 * 3.141592f / 180.0f));
+	verticies[2] = 0.8 + sin(0) * radius;
+	verticies[3] = 0.8 + cos(0) * radius;
+	verticies[4] = 0.8 + tan(0) * radius;
 	indicies[0] = 0;
 	indicies[1] = 1 * skipNumber;
 	for (int i = 1; i < pointCount + 1; i++)
 	{
-		verticies[5 * i] = cos(360.0f / pointCount * 3.14f / 180.0f * i) * radius;
-		verticies[5 * i + 1] = sin(360.0f / pointCount * 3.14f / 180.0f * i) * radius;
-		verticies[5 * i + 2] = 0.5 + sin(360.0f / pointCount * 3.14f / 180.0f * i) * radius;
-		verticies[5 * i + 3] = 0.5 + cos(360.0f / pointCount * 3.14f / 180.0f * i) * radius;
-		verticies[5 * i + 4] = 0.5 + tan(360.0f / pointCount * 3.14f / 180.0f * i) * radius;
+		verticies[5 * i] = cos((360.0f / pointCount * 3.141592f / 180.0f * i) + (90 * 3.141592f / 180.0f)) * radius;
+		verticies[5 * i + 1] = sin((360.0f / pointCount * 3.141592f / 180.0f * i) + (90 * 3.141592f / 180.0f)) * radius;
+		verticies[5 * i + 2] = 0.8 + sin((360.0f / pointCount * 3.141592f / 180.0f * i) + (90 * 3.141592f / 180.0f)) ;
+		verticies[5 * i + 3] = 0.8 + cos((360.0f / pointCount * 3.141592f / 180.0f * i) + (90 * 3.141592f / 180.0f)) ;
+		verticies[5 * i + 4] = 0.8 + tan((360.0f / pointCount * 3.141592f / 180.0f * i) + (90 * 3.141592f / 180.0f)) ;
 		indicies[2 * i] = (i * skipNumber) % pointCount;
 		indicies[2 * i + 1] = ((i + 1) * skipNumber) % pointCount;
 	}
@@ -47,10 +46,10 @@ int main()
 		std::cout << "Please enter the number of lines to be drawn between the points you selected earlier \n(Do not choose a number that exactly divides the selected points and bigger than half of the selected points; otherwise, you will not obtain a star): \n";
 		std::cin >> b;
 
-
-		DrawStar(a, 0.99, b);
+		DrawStar(a, 1.0f, b);
 
 		glfwInit(); glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3); glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3); glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
+		glfwWindowHint(GLFW_SAMPLES, 4);
 		GLFWwindow* window = glfwCreateWindow(1000, 1000, "StarAlgorithm", NULL, NULL);
 		glfwMakeContextCurrent(window);
 		glfwSwapInterval(1);
@@ -93,7 +92,7 @@ int main()
 		glEnableVertexAttribArray(0);
 		glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 5 * sizeof(GL_FLOAT), (void*)(2 * sizeof(float)));
 		glEnableVertexAttribArray(1);
-
+		glLineWidth(5.0f);
 		while (!glfwWindowShouldClose(window))
 		{
 			glClearColor(0.0f, 0.00f, 0.00f, 1.0f); glClear(GL_COLOR_BUFFER_BIT);

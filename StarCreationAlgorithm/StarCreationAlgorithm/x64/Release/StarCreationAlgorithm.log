@@ -1,11 +1,10 @@
 ﻿  Main.cpp
+C:\Users\Arda\Desktop\StarCreationAlgorithm\StarCreationAlgorithm\Main.cpp(18,21): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
 C:\Users\Arda\Desktop\StarCreationAlgorithm\StarCreationAlgorithm\Main.cpp(19,21): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
 C:\Users\Arda\Desktop\StarCreationAlgorithm\StarCreationAlgorithm\Main.cpp(20,21): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
-C:\Users\Arda\Desktop\StarCreationAlgorithm\StarCreationAlgorithm\Main.cpp(21,21): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\Arda\Desktop\StarCreationAlgorithm\StarCreationAlgorithm\Main.cpp(27,30): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
 C:\Users\Arda\Desktop\StarCreationAlgorithm\StarCreationAlgorithm\Main.cpp(28,30): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
 C:\Users\Arda\Desktop\StarCreationAlgorithm\StarCreationAlgorithm\Main.cpp(29,30): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
-C:\Users\Arda\Desktop\StarCreationAlgorithm\StarCreationAlgorithm\Main.cpp(30,30): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
-C:\Users\Arda\Desktop\StarCreationAlgorithm\StarCreationAlgorithm\Main.cpp(51,15): warning C4305: 'argument': truncation from 'double' to 'float'
 C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.40.33807\include\xutility(5164,24): warning C4244: '=': conversion from 'const _Ty' to 'GLfloat', possible loss of data
 C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.40.33807\include\xutility(5164,24): warning C4244:         with
 C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.40.33807\include\xutility(5164,24): warning C4244:         [
